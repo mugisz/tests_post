@@ -81,7 +81,7 @@ const MainPage: FC<NextPage> = () => {
   }
 
   return (
-    <div className="container flex justify-around h-screen">
+    <div className="container flex justify-around h-screen ">
       <div className="w-[50%] ml-12">
         <h1 className="text-3xl text-start font-medium my-5">Post Blog</h1>
         <PostForm
@@ -90,7 +90,7 @@ const MainPage: FC<NextPage> = () => {
           onSave={addPost}
         />
       </div>
-      <div className="w-[50%] mt-11 px-6">
+      <div className="w-[50%] mt-11 px-6 ">
         <h1 className="text-4xl mb-6">All Blogs</h1>
         <Search searchQuery={searchQuery} onSearchChange={setSearchQuery} />
         <PostList
@@ -98,14 +98,14 @@ const MainPage: FC<NextPage> = () => {
           onEdit={editPost}
           onDelete={deletePost}
         />
-        <div className="flex justify-center items-center bg-red-500 mt-5 w-5 border-solid-red">
+        <div className="flex justify-center items-center mt-5 w-5 border-solid-red">
           {[
             ...Array(Math.ceil(filteredPosts.length / postsPerPage)).keys(),
           ].map((number) => (
             <button
               key={number}
               onClick={() => paginate(number + 1)}
-              className={`mx-1 px-3 py-1 rounded-md ${
+              className={`mx-1 px-4 py-1 rounded-md ${
                 currentPage === number + 1
                   ? "bg-blue-500 text-white"
                   : "bg-gray-200 text-gray-700"
